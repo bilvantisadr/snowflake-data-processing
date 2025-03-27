@@ -1,0 +1,21 @@
+version: 2
+sources:
+  - name: tgt_layer
+    database: dist
+    schema: oms
+    tables:
+      - name: customers
+        description: "Stage orders data"
+      - name: orders
+        description: "Stage orders data"
+      - name: order_items
+        description: "Stage orders data"
+      - name: payments
+        description: "Stage payments data"
+
+models:
+  - name: customer_snapshot
+    columns:
+      - name: customer_id
+        tests:
+          - not_null

@@ -1,0 +1,44 @@
+version: 2
+sources:
+  - name: src_layer
+    database: raw
+    schema: oms
+    tables:
+      - name: orders
+        description: "Raw orders data"
+        loaded_at_field: etl_loaded_at
+        freshness: 
+          error_after:
+            count: 2
+            period: day
+          warn_after:
+            count: 1
+            period: day
+      - name: order_items
+        description: "Raw orders data"
+        loaded_at_field: etl_loaded_at
+        freshness: 
+          error_after:
+            count: 2
+            period: day
+          warn_after:
+            count: 1
+            period: day
+      - name: customers
+        description: "Raw orders data"
+        freshness: 
+          error_after:
+            count: 2
+            period: day
+          warn_after:
+            count: 1
+            period: day
+      - name: payments
+        description: "Raw orders data"
+        freshness: 
+          error_after:
+            count: 2
+            period: day
+          warn_after:
+            count: 1
+            period: day
